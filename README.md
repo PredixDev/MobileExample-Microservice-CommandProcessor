@@ -7,7 +7,7 @@ A sample command-processor which adds a timestamp in response.
 A Command represents an asynchronous unit of work.  
 
 ### Command Document  
-A command document is a json document with _type_ field value as `command` & _~status_ filed. Command document format is similar to an HTTP request, with a request and response section contained in the same document.  
+A command document is a json document with _type_ field value as _command_ & _~status_ filed. Command document format is similar to an HTTP request, with a request and response section contained in the same document.  
 
 ### Command Processor  
 Any HTTP enabled micro-service.
@@ -17,14 +17,14 @@ Micro-Service tasked with routing `pending` command documents to configured `Com
 
 
 ## How things works
-Command Router keeps on looking for commands sent by clients. As and when Command Router detects a new command in *_pending_* state it looks for a Command Processor (using `uri` value of a command-document) which can process this command. The Command Router manages the state of a given command from the time the document arrives on the server, until the router writes the result from an invoked Command Processor to the response section of the document.  
-The Command Router will translate a command document into an equivalent HTTP request to a Command Processor. The HTTP response from the Command Processor will be serialized and placed in the response section of the originating command document.  
-**Register Command Processor**  
-To register a Command Processor with Command Router you can use _PM CLI_ tool. PM CLI tool needs following two parameters to register a Command Processor:  
+The Command Router manages the state of a given command from the time the document arrives on the server, until the router writes the result from an invoked Command Processor to the response section of the document. The Command Router will translate a command document into an equivalent HTTP request to a Command Processor. The HTTP response from the Command Processor will be serialized and placed in the response section of the originating command document.  
+
+**Registering Command Processor**  
+PM CLI tool needs following two parameters to register a Command Processor:  
 *_command route_* and a *_Command-Processor-endpoint-url_*.  
 ex. `pm add-route <command-route> <processor-url>` _Note: (you can use --debug option to see what it is doing behind the scene)_  
 
-command-document example:  
+_command-document example_:  
 `{
       "type": "command", //should be of type command
       "~userid": usera_ge_com, // replace '.' & '@' with '_' from username (if email address is used)
@@ -47,6 +47,7 @@ command-document example:
 
 ## Configuration
 When running on a development system environment the configuration found in `config/default.json` will be used to configure whereas `manifest.yml` will be used when pushed to CF.  
+Logging level can be changed in `js/bunyanLogger.js` file. Default is `trace` and _src_ is `true`.
 
 ## Installation
 
