@@ -70,4 +70,7 @@ A common workflow is outlined below:
 node index.js
 OR
 node index.js | ./node_modules/.bin/bunyan # outputs nice looking logs in terminal window
-```
+```  
+
+## [Sample WebApp]
+[Sample WebApp]:https://github.com/PredixDev/MobileExample-WebApp-SendCommand
