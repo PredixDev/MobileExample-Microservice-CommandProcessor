@@ -1,4 +1,4 @@
-# Example Command Processor (v0.1)
+# MobileExample-Microservice-CommandProcessor(v0.1)
 A sample command-processor which adds a timestamp in response.  
 
 ## Definitions  
