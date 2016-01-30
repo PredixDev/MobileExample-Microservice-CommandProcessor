@@ -22,7 +22,7 @@ The Command Router manages the state of a given command from the time the docume
 **Registering Command Processor**  
 PM CLI tool needs following two parameters to register a Command Processor:  
 *_command route_* and a *_Command-Processor-endpoint-url_*.  
-ex. `pm add-route <command-route> <processor-url>` _Note: (you can use --debug option to see what it is doing behind the scene)_  
+ex. `pm add-route '/cmdp_test/' 'my-command-processor.run.aws-usw02-pr.ice.predix.io'` _Note: (you can use --debug option to see what it is doing behind the scene)_  
 
 _command-document example_:  
 `{
@@ -33,7 +33,7 @@ _command-document example_:
 
       // command router reads this and hit command processor based on parameters
       "request": {
-        "uri": command_route,
+        "uri": "/cmdp_test/",
         "method": "PUT",
         "headers": {},
         "body": { //whatever goes inside body will be passed to command processor
@@ -64,13 +64,10 @@ cf push
 
 ## Running
 
-A common workflow is outlined below:
-
-```
-node index.js
-OR
-node index.js | ./node_modules/.bin/bunyan # outputs nice looking logs in terminal window
-```  
+A common workflow is outlined below:  
+- Get command-processor url (_urls_ field of `cf apps`).
+- `pm add-route <command-route> <processor-url>`
+- Push [Sample WebApp] to Mobile backend `pm publish`
 
 ## [Sample WebApp]
 [Sample WebApp]:https://github.com/PredixDev/MobileExample-WebApp-SendCommand

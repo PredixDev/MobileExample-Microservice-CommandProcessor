@@ -6,4 +6,3 @@ applications:
 - name: example-command-processor
   path: .
   memory: 512M
-  env:
