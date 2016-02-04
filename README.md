@@ -1,4 +1,4 @@
-# MobileExample-Microservice-CommandProcessor(v0.1)
+# MobileExample-Microservice-CommandProcessor
 A sample command-processor which adds a timestamp in response.  
 
 ## Definitions  
@@ -44,6 +44,8 @@ _command-document example_:
       }
   }`
 
+  ## Before You Begin:
+  It is assumed that you already have a running instances of [_Predix Mobile cloud services_](https://www.predix.io/docs#rae4EfJ6) and have installed the _Predix Mobile command line tool_.  
 
 ## Configuration
 When running on a development system environment the configuration found in `config/default.json` will be used to configure whereas `manifest.yml` will be used when pushed to CF.  
@@ -64,9 +66,10 @@ cf push
 
 ## Running
 
-A common workflow is outlined below:  
+A common workflow is outlined below:
+- push this command-processor to cf.  
 - Get command-processor url (_urls_ field of `cf apps`).
-- `pm add-route <command-route> <processor-url>`
+- run `pm add-route <command-route> <processor-url>`
 - Push [Sample WebApp] to Mobile backend `pm publish`
 
 ## [Sample WebApp]
