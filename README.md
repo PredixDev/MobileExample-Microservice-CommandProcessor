@@ -16,7 +16,7 @@ Any HTTP enabled micro-service.
 Micro-Service tasked with routing `pending` command documents to configured `Command Processors`.  
 
 
-## How things works
+## How things work
 The Command Router manages the state of a given command from the time the document arrives on the server, until the router writes the result from an invoked Command Processor to the response section of the document. The Command Router will translate a command document into an equivalent HTTP request to a Command Processor. The HTTP response from the Command Processor will be serialized and placed in the response section of the originating command document.  
 
 **Registering Command Processor**  
