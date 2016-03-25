@@ -7,7 +7,7 @@ A sample command processor that adds a timestamp in response.
 A Command represents an asynchronous unit of work.  
 
 ### Command Document  
-A command document is a JSON document with _type_ field value as _command_ and _~status_ filed. The command document format is similar to an HTTP request, with a request and response section contained in the same document.  
+A command document is a JSON document with a _~status_ field and a _type_ field with a _command_. The command document format is similar to an HTTP request, with a request and response section contained in the same document.  
 
 ### Command Processor  
 Any HTTP enabled microservice.
