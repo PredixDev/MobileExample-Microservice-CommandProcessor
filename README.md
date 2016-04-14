@@ -25,24 +25,24 @@ PM CLI tool needs the following two parameters to register a Command Processor:
 For example: `pm add-route '/cmdp_test/' 'my-command-processor.run.aws-usw02-pr.ice.predix.io'` _Note: You can use --debug option to see what it is doing behind the scene._  
 
 _command-document example_:  
-`  
+``` 
 {
-
-    "type": "command", //should be of type command  
-      "~userid": usera_ge_com, // replace . & @ with _ from username (if email address is used)
-      "channels": ["entity_" + usera_ge_com],
-      "~status": "pending",
-      // command router reads this and hit command processor based on parameters
-      "request": {
-        "uri": "/cmdp_test/",
-        "method": "PUT",
-        "headers": {},
-        "body": { //whatever goes inside body will be passed to command processor
-          "abc" : 1,
-          "some key" : "some value"
-        }
-      }
-  }`  
+  "type": "command", //should be of type command  
+  "~userid": usera_ge_com, // replace . & @ with _ from username (if email address is used)
+  "channels": ["entity_" + usera_ge_com],
+  "~status": "pending",
+  // command router reads this and hit command processor based on parameters
+  "request": {
+    "uri": "/cmdp_test/",
+    "method": "PUT",
+    "headers": {},
+    "body": { //whatever goes inside body will be passed to command processor
+      "abc" : 1,
+      "some key" : "some value"
+    }
+  }
+}
+```
   ## Before You Begin:
   It is assumed that you already have a running instances of [_Predix Mobile cloud services_](https://www.predix.io/docs#rae4EfJ6) and have installed the _Predix Mobile command line tool_.  
 
