@@ -43,8 +43,8 @@ _command-document example_:
   }
 }
 ```
-  ## Before You Begin:
-  It is assumed that you already have a running instances of [_Predix Mobile cloud services_](https://www.predix.io/docs#rae4EfJ6) and have installed the _Predix Mobile command line tool_.  
+## Before You Begin:
+It is assumed that you already have a running instances of [_Predix Mobile cloud services_](https://www.predix.io/docs#rae4EfJ6) and have installed the _Predix Mobile command line tool_.  
 
 ## Configuration
 When running on a development system environment, use the configuration found in `config/default.json`. When pushing to CF, use is be  `manifest.yml`.  
