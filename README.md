@@ -25,7 +25,7 @@ The PM CLI tool needs the following two parameters to register a Command Process
 For example: `pm add-route '/cmdp_test/' 'my-command-processor.run.aws-usw02-pr.ice.predix.io'` _Note: You can use --debug option to see what it is doing behind the scene._  
 
 _command-document example_:  
-``` json
+``` 
 {
   "type": "command", //should be of type command  
   "~userid": usera_ge_com, // replace . & @ with _ from username (if email address is used)
